@@ -5,6 +5,84 @@
     "version": "1.0"
   },
   "paths": {
+    "/Categoria/FromService/{nome}": {
+      "get": {
+        "tags": [
+          "Categoria"
+        ],
+        "parameters": [
+          {
+            "name": "nome",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Categoria/SemFromService/{nome}": {
+      "get": {
+        "tags": [
+          "Categoria"
+        ],
+        "parameters": [
+          {
+            "name": "nome",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/Categoria/produtos": {
       "get": {
         "tags": [
@@ -281,6 +359,7 @@
             "in": "path",
             "required": true,
             "schema": {
+              "minimum": 1,
               "type": "integer",
               "format": "int32"
             }
@@ -481,6 +560,9 @@
           "categoriaId": {
             "type": "integer",
             "format": "int32"
+          },
+          "categoria": {
+            "$ref": "#/components/schemas/Categoria"
           }
         },
         "additionalProperties": false

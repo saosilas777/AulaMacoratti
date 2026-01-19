@@ -1,4 +1,5 @@
 using APICatalogo.Data;
+using APICatalogo.Services;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 
@@ -13,6 +14,8 @@ builder.Services.AddSwaggerGen();
 string? APIConnection = builder.Configuration.GetConnectionString("DataBase");
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(APIConnection ?? throw new InvalidOperationException("Connection string 'APICatalogo' not found.")));
 builder.Services.AddControllers().AddJsonOptions(options => options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+builder.Services.AddTransient<IService, Service>();
+
 
 var app = builder.Build();
 

@@ -1,5 +1,6 @@
 ﻿using APICatalogo.Data;
 using APICatalogo.Models;
+using APICatalogo.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json;
@@ -15,12 +16,29 @@ namespace APICatalogo.Controllers
 		{
 			_context = context;
 		}
+
+		[HttpGet("FromService/{nome}")]
+		public ActionResult<string> GetSaudacaoFromService([FromServices] IService meuServico, string nome) 
+		{
+			return meuServico.Saudacao(nome);
+		}
+
+
+		[HttpGet("SemFromService/{nome}")]
+		public ActionResult<string> GetSaudacaoSemFromService(IService meuServico, string nome) 
+		{
+			return meuServico.Saudacao(nome);
+		}
+
+
+
+
 		[HttpGet("produtos")]
 		public ActionResult<IEnumerable<Categoria>> GetCategorysAndProducts()
 		{
 			return _context.Categorias.Include(x => x.Produtos).AsNoTracking().ToList();
 		}
-			[HttpGet]
+		[HttpGet]
 		public ActionResult<IEnumerable<Categoria>> GetAll()
 		{
 

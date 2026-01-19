@@ -111,6 +111,32 @@
   },
   {
     "ContainingType": "APICatalogo.Controllers.CategoriaController",
+    "Method": "GetSaudacaoFromService",
+    "RelativePath": "Categoria/FromService/{nome}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nome",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "APICatalogo.Controllers.CategoriaController",
     "Method": "GetCategorysAndProducts",
     "RelativePath": "Categoria/produtos",
     "HttpMethod": "GET",
@@ -120,6 +146,32 @@
     "ReturnTypes": [
       {
         "Type": "System.Collections.Generic.IEnumerable\u00601[[APICatalogo.Models.Categoria, APICatalogo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "APICatalogo.Controllers.CategoriaController",
+    "Method": "GetSaudacaoSemFromService",
+    "RelativePath": "Categoria/SemFromService/{nome}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nome",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -151,7 +203,7 @@
   },
   {
     "ContainingType": "APICatalogo.Controllers.ProdutosController",
-    "Method": "GetById",
+    "Method": "GetByIdAsync",
     "RelativePath": "Produtos/{id}",
     "HttpMethod": "GET",
     "IsController": true,

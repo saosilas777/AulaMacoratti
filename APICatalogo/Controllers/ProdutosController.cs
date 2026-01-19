@@ -39,18 +39,18 @@ namespace APICatalogo.Controllers
 
 		}
 
-		[HttpGet("{id}", Name = "ObterProduto")]
-		public ActionResult<Produto> GetById(int id)
+		[HttpGet("{id:min(1)}", Name = "ObterProduto")]
+		public async Task<ActionResult<Produto>> GetByIdAsync(int id)
 		{
 
 			try
 			{
-				Produto? product = _context.Produtos.AsNoTracking().FirstOrDefault(x => x.ProdutoId == id);
+				Produto?  product = await _context.Produtos.Include(x => x.Categoria).AsNoTracking().FirstOrDefaultAsync(x => x.ProdutoId == id);
 				if (product is null)
 				{
 					return NotFound("Product not found");
 				}
-				return product;
+				return  product;
 
 			}
 			catch (Exception e)
