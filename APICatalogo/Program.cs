@@ -1,4 +1,7 @@
 using APICatalogo.Data;
+using APICatalogo.Extensions;
+using APICatalogo.Filters;
+using APICatalogo.Logging;
 using APICatalogo.Services;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
@@ -15,6 +18,12 @@ string? APIConnection = builder.Configuration.GetConnectionString("DataBase");
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(APIConnection ?? throw new InvalidOperationException("Connection string 'APICatalogo' not found.")));
 builder.Services.AddControllers().AddJsonOptions(options => options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 builder.Services.AddTransient<IService, Service>();
+builder.Services.AddScoped<ApiLogginFilter>();
+builder.Logging.AddProvider(new CustomLoggerProvider(new CustomLoggerProviderConfiguration
+{
+    LogLevel = LogLevel.Information
+}));
+
 
 
 var app = builder.Build();
@@ -24,6 +33,7 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.ConfigureExceptionHandler();
 }
 
 app.UseHttpsRedirection();

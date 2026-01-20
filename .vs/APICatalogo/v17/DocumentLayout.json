@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\saosi\\Documents\\Curso Web API Macoratti\\Projetos\\AulaMacoratti\\",
+  "WorkspaceRootPath": "D:\\Curso Web API 2024\\Projetos\\APICatalogo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3657E489-EAD5-4C76-B6C2-4CBE1767BA21}|APICatalogo\\APICatalogo.csproj|c:\\users\\saosi\\documents\\curso web api macoratti\\projetos\\aulamacoratti\\apicatalogo\\controllers\\categoriacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3657E489-EAD5-4C76-B6C2-4CBE1767BA21}|APICatalogo\\APICatalogo.csproj|d:\\curso web api 2024\\projetos\\apicatalogo\\apicatalogo\\controllers\\categoriacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3657E489-EAD5-4C76-B6C2-4CBE1767BA21}|APICatalogo\\APICatalogo.csproj|solutionrelative:apicatalogo\\controllers\\categoriacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -20,13 +20,13 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "CategoriaController.cs",
-              "DocumentMoniker": "C:\\Users\\saosi\\Documents\\Curso Web API Macoratti\\Projetos\\AulaMacoratti\\APICatalogo\\Controllers\\CategoriaController.cs",
+              "DocumentMoniker": "D:\\Curso Web API 2024\\Projetos\\APICatalogo\\APICatalogo\\Controllers\\CategoriaController.cs",
               "RelativeDocumentMoniker": "APICatalogo\\Controllers\\CategoriaController.cs",
-              "ToolTip": "C:\\Users\\saosi\\Documents\\Curso Web API Macoratti\\Projetos\\AulaMacoratti\\APICatalogo\\Controllers\\CategoriaController.cs",
+              "ToolTip": "D:\\Curso Web API 2024\\Projetos\\APICatalogo\\APICatalogo\\Controllers\\CategoriaController.cs",
               "RelativeToolTip": "APICatalogo\\Controllers\\CategoriaController.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAUwB4AAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-17T18:42:25.394Z",
+              "WhenOpened": "2026-01-20T19:27:49.292Z",
               "EditorCaption": ""
             }
           ]

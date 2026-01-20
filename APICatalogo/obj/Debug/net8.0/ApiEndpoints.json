@@ -137,6 +137,26 @@
   },
   {
     "ContainingType": "APICatalogo.Controllers.CategoriaController",
+    "Method": "GetValues",
+    "RelativePath": "Categoria/LerArquivodeconfiguracao",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "APICatalogo.Controllers.CategoriaController",
     "Method": "GetCategorysAndProducts",
     "RelativePath": "Categoria/produtos",
     "HttpMethod": "GET",
@@ -172,6 +192,26 @@
     "ReturnTypes": [
       {
         "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "APICatalogo.Controllers.CategoriaController",
+    "Method": "GetByIdMiddleware",
+    "RelativePath": "Categoria/UsandoMiddleware",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "APICatalogo.Models.Categoria",
         "MediaTypes": [
           "text/plain",
           "application/json",

@@ -1,0 +1,17 @@
+Information: ListeningOnAddress - Now listening on: https://localhost:7103
+Information: ListeningOnAddress - Now listening on: http://localhost:5239
+Information: 0 - Application started. Press Ctrl+C to shut down.
+Information: 0 - Hosting environment: Development
+Information: 0 - Content root path: D:\Curso Web API 2024\Projetos\APICatalogo\APICatalogo
+Information: Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted - Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[ProdutoId], [p].[CategoriaId], [p].[DataCadastro], [p].[Descricao], [p].[Estoque], [p].[ImagemUrl], [p].[Nome], [p].[Preco]
+FROM [Produtos] AS [p]
+Information: Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted - Executed DbCommand (67ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[ProdutoId], [p].[CategoriaId], [p].[DataCadastro], [p].[Descricao], [p].[Estoque], [p].[ImagemUrl], [p].[Nome], [p].[Preco], [c].[CategoriaId], [c].[ImagemUrl], [c].[Nome]
+FROM [Produtos] AS [p]
+INNER JOIN [Categorias] AS [c] ON [p].[CategoriaId] = [c].[CategoriaId]
+WHERE [p].[ProdutoId] = @__id_0
+Information: Microsoft.EntityFrameworkCore.Database.Command.CommandExecuted - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[CategoriaId], [c].[ImagemUrl], [c].[Nome]
+FROM [Categorias] AS [c]
+WHERE [c].[CategoriaId] = @__id_0
