@@ -566,6 +566,10 @@
         ],
         "type": "object",
         "properties": {
+          "categoriaId": {
+            "type": "integer",
+            "format": "int32"
+          },
           "nome": {
             "maxLength": 80,
             "minLength": 0,

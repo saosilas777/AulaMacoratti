@@ -13,7 +13,6 @@ namespace APICatalogo.Models
 		}
 
 		[Key]
-		[JsonIgnore]
 		public int CategoriaId { get; set; }
 		[Required]
 		[StringLength(80)]
@@ -22,7 +21,7 @@ namespace APICatalogo.Models
 		[StringLength(300)]
 		public string? ImagemUrl { get; set; }
 
-		[JsonIgnore]
+		//[JsonIgnore]
 		public ICollection<Produto>? Produtos { get; set; }
 	}
 }

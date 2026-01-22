@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "APICatalogo.Controllers.CategoriaController",
-    "Method": "GetAll",
+    "Method": "GetCategorias",
     "RelativePath": "Categoria",
     "HttpMethod": "GET",
     "IsController": true,
@@ -21,7 +21,7 @@
   },
   {
     "ContainingType": "APICatalogo.Controllers.CategoriaController",
-    "Method": "GetById",
+    "Method": "GetCategoria",
     "RelativePath": "Categoria/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -48,7 +48,7 @@
   },
   {
     "ContainingType": "APICatalogo.Controllers.CategoriaController",
-    "Method": "Update",
+    "Method": "UpdateCategoria",
     "RelativePath": "Categoria/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -60,7 +60,7 @@
         "IsRequired": true
       },
       {
-        "Name": "category",
+        "Name": "categoria",
         "Type": "APICatalogo.Models.Categoria",
         "IsRequired": true
       }
@@ -69,7 +69,7 @@
   },
   {
     "ContainingType": "APICatalogo.Controllers.CategoriaController",
-    "Method": "Delete",
+    "Method": "DeleteCategoria",
     "RelativePath": "Categoria/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
@@ -95,7 +95,7 @@
   },
   {
     "ContainingType": "APICatalogo.Controllers.CategoriaController",
-    "Method": "Create",
+    "Method": "CreateCategoria",
     "RelativePath": "Categoria/Create",
     "HttpMethod": "POST",
     "IsController": true,
