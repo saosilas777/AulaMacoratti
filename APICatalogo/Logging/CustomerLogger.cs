@@ -33,7 +33,7 @@ namespace APICatalogo.Logging
 		private void FileWriter(string message)
 		{
 
-			string filePath = @"D:\Curso Web API 2024\Projetos\APICatalogo\log\ApiCatalogo.txt";
+			string filePath = @"C:\Users\saosi\Documents\Log\log.txt";
 			using (StreamWriter streamWriter = new StreamWriter(filePath, true))
 			{
 				try

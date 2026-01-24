@@ -15,11 +15,14 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-string? APIConnection = builder.Configuration.GetConnectionString("DataBase");
+string? dataString = builder.Configuration.GetConnectionString("DataBase");
+var APIConnection = dataString.Replace("machineName", Environment.MachineName);
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(APIConnection ?? throw new InvalidOperationException("Connection string 'APICatalogo' not found.")));
 //builder.Services.AddControllers().AddJsonOptions(options => options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 builder.Services.AddTransient<IService, Service>();
 builder.Services.AddScoped<ICategoriaRepositorio,CategoriaRepositorio>();
+builder.Services.AddScoped<IProdutoRepositorio,ProdutoRepositorio>();
+builder.Services.AddScoped(typeof(IRepository<>),typeof(Repository<>));
 builder.Services.AddScoped<ApiLogginFilter>();
 builder.Logging.AddProvider(new CustomLoggerProvider(new CustomLoggerProviderConfiguration
 {

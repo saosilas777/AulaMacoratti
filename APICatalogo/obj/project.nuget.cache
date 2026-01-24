@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EmRhIQ8F7uw=",
+  "dgSpecHash": "uBqQV8mxcq4=",
   "success": true,
-  "projectFilePath": "D:\\Curso Web API 2024\\Projetos\\APICatalogo\\APICatalogo\\APICatalogo.csproj",
+  "projectFilePath": "C:\\Users\\saosi\\Documents\\Curso Web API Macoratti\\Projetos\\AulaMacoratti\\APICatalogo\\APICatalogo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\saosi\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\saosi\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

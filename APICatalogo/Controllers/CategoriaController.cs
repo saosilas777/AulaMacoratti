@@ -48,26 +48,26 @@ namespace APICatalogo.Controllers
 			return meuServico.Saudacao(nome);
 		}
 
-		[HttpGet("produtos")]
-		public ActionResult<IEnumerable<Categoria>> GetCategorysAndProducts()
-		{
-			var categoriasProdutos = _repository.GetCategorysAndProducts();
-			return Ok(categoriasProdutos);
-		}
+		//[HttpGet("produtos")]
+		//public ActionResult<IEnumerable<Categoria>> GetCategorysAndProducts()
+		//{
+		//	var categoriasProdutos = _repository.GetCategorysAndProducts();
+		//	return Ok(categoriasProdutos);
+		//}
 
 
 		[HttpGet]
 		[ServiceFilter(typeof(ApiLogginFilter))]
 		public ActionResult<IEnumerable<Categoria>> GetCategorias()
 		{
-			IEnumerable<Categoria> categorias = _repository.GetCategorias();
-			return Ok(categorias);
+			return Ok(_repository.GetAll());
 		}
 
 		[HttpGet("{id:int}", Name = "ObterCategoria")]
 		public ActionResult<Categoria> GetCategoria(int id)
 		{
-			Categoria category = _repository.GetCategoria(id);
+			Categoria category = _repository.Get(c => c.CategoriaId == id);
+			if (category == null) throw new Exception("Requisição sem sucesso");
 			return Ok(category);
 
 		}
@@ -80,21 +80,23 @@ namespace APICatalogo.Controllers
 		[HttpPost("Create")]
 		public ActionResult CreateCategoria(Categoria category)
 		{
-			var _categoria = _repository.CreateCategoria(category);
+			var _categoria = _repository.Create(category);
 			return new CreatedAtRouteResult("ObterProduto", new { id = _categoria.CategoriaId }, _categoria);
 		}
 
 		[HttpPut("{id:int}")]
 		public ActionResult UpdateCategoria(int id, Categoria categoria)
 		{
-			var _categoria = _repository.UpdateCategoria(categoria);
+			var _categoria = _repository.Update(categoria);
 			return Ok(_categoria);
 		}
 
 		[HttpDelete("{id}")]
 		public ActionResult<Categoria> DeleteCategoria(int id)
 		{
-			var categoria = _repository.DeleteCategoria(id);
+			var categoria = _repository.Get(c => c.CategoriaId == id);
+			if (categoria == null) throw new Exception("Requisição sem sucesso");
+			_repository.Delete(categoria);
 			return Ok(categoria);
 		}
 

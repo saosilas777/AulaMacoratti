@@ -3905,11 +3905,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Curso Web API 2024\\Projetos\\APICatalogo\\APICatalogo\\APICatalogo.csproj",
+      "projectUniqueName": "C:\\Users\\saosi\\Documents\\Curso Web API Macoratti\\Projetos\\AulaMacoratti\\APICatalogo\\APICatalogo.csproj",
       "projectName": "APICatalogo",
-      "projectPath": "D:\\Curso Web API 2024\\Projetos\\APICatalogo\\APICatalogo\\APICatalogo.csproj",
+      "projectPath": "C:\\Users\\saosi\\Documents\\Curso Web API Macoratti\\Projetos\\AulaMacoratti\\APICatalogo\\APICatalogo.csproj",
       "packagesPath": "C:\\Users\\saosi\\.nuget\\packages\\",
-      "outputPath": "D:\\Curso Web API 2024\\Projetos\\APICatalogo\\APICatalogo\\obj\\",
+      "outputPath": "C:\\Users\\saosi\\Documents\\Curso Web API Macoratti\\Projetos\\AulaMacoratti\\APICatalogo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3924,7 +3924,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3993,7 +3992,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.309/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

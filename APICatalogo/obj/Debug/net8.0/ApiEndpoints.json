@@ -157,26 +157,6 @@
   },
   {
     "ContainingType": "APICatalogo.Controllers.CategoriaController",
-    "Method": "GetCategorysAndProducts",
-    "RelativePath": "Categoria/produtos",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[APICatalogo.Models.Categoria, APICatalogo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "APICatalogo.Controllers.CategoriaController",
     "Method": "GetSaudacaoSemFromService",
     "RelativePath": "Categoria/SemFromService/{nome}",
     "HttpMethod": "GET",
@@ -223,12 +203,18 @@
   },
   {
     "ContainingType": "APICatalogo.Controllers.ProdutosController",
-    "Method": "GetAll",
-    "RelativePath": "Produtos",
+    "Method": "GetProdutosPorCategoria",
+    "RelativePath": "Produtos/{categoryId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "categoryId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": [
       {
         "Type": "System.Collections.Generic.IEnumerable\u00601[[APICatalogo.Models.Produto, APICatalogo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
@@ -239,7 +225,8 @@
         ],
         "StatusCode": 200
       }
-    ]
+    ],
+    "EndpointName": "ObterProdutoPorCategoria"
   },
   {
     "ContainingType": "APICatalogo.Controllers.ProdutosController",
@@ -330,5 +317,25 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "APICatalogo.Controllers.ProdutosController",
+    "Method": "GetAllProdutos",
+    "RelativePath": "Produtos/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[APICatalogo.Models.Produto, APICatalogo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]

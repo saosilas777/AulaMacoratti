@@ -1,26 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Curso Web API 2024\\Projetos\\APICatalogo\\",
+  "WorkspaceRootPath": "C:\\Users\\saosi\\Documents\\Curso Web API Macoratti\\Projetos\\AulaMacoratti\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3657E489-EAD5-4C76-B6C2-4CBE1767BA21}|APICatalogo\\APICatalogo.csproj|d:\\curso web api 2024\\projetos\\apicatalogo\\apicatalogo\\models\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3657E489-EAD5-4C76-B6C2-4CBE1767BA21}|APICatalogo\\APICatalogo.csproj|solutionrelative:apicatalogo\\models\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3657E489-EAD5-4C76-B6C2-4CBE1767BA21}|APICatalogo\\APICatalogo.csproj|d:\\curso web api 2024\\projetos\\apicatalogo\\apicatalogo\\models\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3657E489-EAD5-4C76-B6C2-4CBE1767BA21}|APICatalogo\\APICatalogo.csproj|solutionrelative:apicatalogo\\models\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3657E489-EAD5-4C76-B6C2-4CBE1767BA21}|APICatalogo\\APICatalogo.csproj|d:\\curso web api 2024\\projetos\\apicatalogo\\apicatalogo\\repositories\\categoriarepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3657E489-EAD5-4C76-B6C2-4CBE1767BA21}|APICatalogo\\APICatalogo.csproj|solutionrelative:apicatalogo\\repositories\\categoriarepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3657E489-EAD5-4C76-B6C2-4CBE1767BA21}|APICatalogo\\APICatalogo.csproj|d:\\curso web api 2024\\projetos\\apicatalogo\\apicatalogo\\controllers\\categoriacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3657E489-EAD5-4C76-B6C2-4CBE1767BA21}|APICatalogo\\APICatalogo.csproj|solutionrelative:apicatalogo\\controllers\\categoriacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3657E489-EAD5-4C76-B6C2-4CBE1767BA21}|APICatalogo\\APICatalogo.csproj|d:\\curso web api 2024\\projetos\\apicatalogo\\apicatalogo\\repositories\\icategoriarepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3657E489-EAD5-4C76-B6C2-4CBE1767BA21}|APICatalogo\\APICatalogo.csproj|solutionrelative:apicatalogo\\repositories\\icategoriarepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3657E489-EAD5-4C76-B6C2-4CBE1767BA21}|APICatalogo\\APICatalogo.csproj|c:\\users\\saosi\\documents\\curso web api macoratti\\projetos\\aulamacoratti\\apicatalogo\\controllers\\produtoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3657E489-EAD5-4C76-B6C2-4CBE1767BA21}|APICatalogo\\APICatalogo.csproj|solutionrelative:apicatalogo\\controllers\\produtoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,66 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Categoria.cs",
-              "DocumentMoniker": "D:\\Curso Web API 2024\\Projetos\\APICatalogo\\APICatalogo\\Models\\Categoria.cs",
-              "RelativeDocumentMoniker": "APICatalogo\\Models\\Categoria.cs",
-              "ToolTip": "D:\\Curso Web API 2024\\Projetos\\APICatalogo\\APICatalogo\\Models\\Categoria.cs",
-              "RelativeToolTip": "APICatalogo\\Models\\Categoria.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA1AAAAAAAAAA==",
+              "Title": "ProdutosController.cs",
+              "DocumentMoniker": "C:\\Users\\saosi\\Documents\\Curso Web API Macoratti\\Projetos\\AulaMacoratti\\APICatalogo\\Controllers\\ProdutosController.cs",
+              "RelativeDocumentMoniker": "APICatalogo\\Controllers\\ProdutosController.cs",
+              "ToolTip": "C:\\Users\\saosi\\Documents\\Curso Web API Macoratti\\Projetos\\AulaMacoratti\\APICatalogo\\Controllers\\ProdutosController.cs",
+              "RelativeToolTip": "APICatalogo\\Controllers\\ProdutosController.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAmwEcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T20:16:19.038Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Produto.cs",
-              "DocumentMoniker": "D:\\Curso Web API 2024\\Projetos\\APICatalogo\\APICatalogo\\Models\\Produto.cs",
-              "RelativeDocumentMoniker": "APICatalogo\\Models\\Produto.cs",
-              "ToolTip": "D:\\Curso Web API 2024\\Projetos\\APICatalogo\\APICatalogo\\Models\\Produto.cs",
-              "RelativeToolTip": "APICatalogo\\Models\\Produto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T20:16:18.088Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ICategoriaRepositorio.cs",
-              "DocumentMoniker": "D:\\Curso Web API 2024\\Projetos\\APICatalogo\\APICatalogo\\Repositories\\ICategoriaRepositorio.cs",
-              "RelativeDocumentMoniker": "APICatalogo\\Repositories\\ICategoriaRepositorio.cs",
-              "ToolTip": "D:\\Curso Web API 2024\\Projetos\\APICatalogo\\APICatalogo\\Repositories\\ICategoriaRepositorio.cs",
-              "RelativeToolTip": "APICatalogo\\Repositories\\ICategoriaRepositorio.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-22T20:12:01.042Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CategoriaRepositorio.cs",
-              "DocumentMoniker": "D:\\Curso Web API 2024\\Projetos\\APICatalogo\\APICatalogo\\Repositories\\CategoriaRepositorio.cs",
-              "RelativeDocumentMoniker": "APICatalogo\\Repositories\\CategoriaRepositorio.cs",
-              "ToolTip": "D:\\Curso Web API 2024\\Projetos\\APICatalogo\\APICatalogo\\Repositories\\CategoriaRepositorio.cs",
-              "RelativeToolTip": "APICatalogo\\Repositories\\CategoriaRepositorio.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAUwDEAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-21T18:24:04.045Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CategoriaController.cs",
-              "DocumentMoniker": "D:\\Curso Web API 2024\\Projetos\\APICatalogo\\APICatalogo\\Controllers\\CategoriaController.cs",
-              "RelativeDocumentMoniker": "APICatalogo\\Controllers\\CategoriaController.cs",
-              "ToolTip": "D:\\Curso Web API 2024\\Projetos\\APICatalogo\\APICatalogo\\Controllers\\CategoriaController.cs",
-              "RelativeToolTip": "APICatalogo\\Controllers\\CategoriaController.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAwwDUAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-20T19:27:49.292Z",
+              "WhenOpened": "2026-01-24T22:10:28.638Z",
               "EditorCaption": ""
             }
           ]

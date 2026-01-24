@@ -112,44 +112,6 @@
         }
       }
     },
-    "/Categoria/produtos": {
-      "get": {
-        "tags": [
-          "Categoria"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Categoria"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Categoria"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Categoria"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/Categoria": {
       "get": {
         "tags": [
@@ -367,7 +329,7 @@
         }
       }
     },
-    "/Produtos": {
+    "/Produtos/GetAll": {
       "get": {
         "tags": [
           "Produtos"
@@ -555,6 +517,56 @@
           }
         }
       }
+    },
+    "/Produtos/{categoryId}": {
+      "get": {
+        "tags": [
+          "Produtos"
+        ],
+        "operationId": "ObterProdutoPorCategoria",
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Produto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Produto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Produto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -579,6 +591,13 @@
             "maxLength": 300,
             "minLength": 0,
             "type": "string"
+          },
+          "produtos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Produto"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
