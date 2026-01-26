@@ -14,14 +14,15 @@ namespace APICatalogo.Controllers
 	public class CategoriaController : Controller
 	{
 
-		private readonly ICategoriaRepositorio _repository;
+		//private readonly ICategoriaRepositorio _repository;
+		private readonly IUnitOfWork _uof;
 		private readonly IConfiguration _config;
 		private readonly ILogger _logger;
-		public CategoriaController(ICategoriaRepositorio repository, IConfiguration config, ILogger<CategoriaController> logger)
+		public CategoriaController(IUnitOfWork uof, IConfiguration config, ILogger<CategoriaController> logger)
 		{
+			_uof = uof;
 			_config = config;
 			_logger = logger;
-			_repository = repository;
 		}
 
 		[HttpGet("LerArquivodeconfiguracao")]
@@ -60,13 +61,13 @@ namespace APICatalogo.Controllers
 		[ServiceFilter(typeof(ApiLogginFilter))]
 		public ActionResult<IEnumerable<Categoria>> GetCategorias()
 		{
-			return Ok(_repository.GetAll());
+			return Ok(_uof.categoriaRepositorio.GetAll());
 		}
 
 		[HttpGet("{id:int}", Name = "ObterCategoria")]
 		public ActionResult<Categoria> GetCategoria(int id)
 		{
-			Categoria category = _repository.Get(c => c.CategoriaId == id);
+			Categoria category = _uof.categoriaRepositorio.Get(c => c.CategoriaId == id);
 			if (category == null) throw new Exception("Requisição sem sucesso");
 			return Ok(category);
 
@@ -80,23 +81,26 @@ namespace APICatalogo.Controllers
 		[HttpPost("Create")]
 		public ActionResult CreateCategoria(Categoria category)
 		{
-			var _categoria = _repository.Create(category);
+			var _categoria = _uof.categoriaRepositorio.Create(category);
+			_uof.Commit();
 			return new CreatedAtRouteResult("ObterProduto", new { id = _categoria.CategoriaId }, _categoria);
 		}
 
 		[HttpPut("{id:int}")]
 		public ActionResult UpdateCategoria(int id, Categoria categoria)
 		{
-			var _categoria = _repository.Update(categoria);
+			var _categoria = _uof.categoriaRepositorio.Update(categoria);
+			_uof.Commit();
 			return Ok(_categoria);
 		}
 
 		[HttpDelete("{id}")]
 		public ActionResult<Categoria> DeleteCategoria(int id)
 		{
-			var categoria = _repository.Get(c => c.CategoriaId == id);
+			var categoria = _uof.categoriaRepositorio.Get(c => c.CategoriaId == id);
 			if (categoria == null) throw new Exception("Requisição sem sucesso");
-			_repository.Delete(categoria);
+			_uof.categoriaRepositorio.Delete(categoria);
+			_uof.Commit();
 			return Ok(categoria);
 		}
 

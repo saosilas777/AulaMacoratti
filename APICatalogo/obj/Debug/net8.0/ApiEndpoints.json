@@ -230,7 +230,7 @@
   },
   {
     "ContainingType": "APICatalogo.Controllers.ProdutosController",
-    "Method": "GetByIdAsync",
+    "Method": "GetProduto",
     "RelativePath": "Produtos/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -320,7 +320,7 @@
   },
   {
     "ContainingType": "APICatalogo.Controllers.ProdutosController",
-    "Method": "GetAllProdutos",
+    "Method": "GetProdutos",
     "RelativePath": "Produtos/GetAll",
     "HttpMethod": "GET",
     "IsController": true,

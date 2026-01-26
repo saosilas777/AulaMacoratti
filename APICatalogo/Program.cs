@@ -22,6 +22,7 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(APIC
 builder.Services.AddTransient<IService, Service>();
 builder.Services.AddScoped<ICategoriaRepositorio,CategoriaRepositorio>();
 builder.Services.AddScoped<IProdutoRepositorio,ProdutoRepositorio>();
+builder.Services.AddScoped<IUnitOfWork,UnitOfWork>();
 builder.Services.AddScoped(typeof(IRepository<>),typeof(Repository<>));
 builder.Services.AddScoped<ApiLogginFilter>();
 builder.Logging.AddProvider(new CustomLoggerProvider(new CustomLoggerProviderConfiguration
