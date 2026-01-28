@@ -1,4 +1,6 @@
 ﻿using APICatalogo.Data;
+using APICatalogo.DTOs;
+using APICatalogo.DTOs.Mappings;
 using APICatalogo.Filters;
 using APICatalogo.Models;
 using APICatalogo.Repositories;
@@ -24,7 +26,7 @@ namespace APICatalogo.Controllers
 			_config = config;
 			_logger = logger;
 		}
-
+		#region OthersMethods
 		[HttpGet("LerArquivodeconfiguracao")]
 		public string GetValues()
 		{
@@ -48,6 +50,11 @@ namespace APICatalogo.Controllers
 		{
 			return meuServico.Saudacao(nome);
 		}
+		[HttpGet("UsandoMiddleware")]
+		public ActionResult<Categoria> GetByIdMiddleware()
+		{
+			throw new Exception("exceção ao retornar a categoria");
+		}
 
 		//[HttpGet("produtos")]
 		//public ActionResult<IEnumerable<Categoria>> GetCategorysAndProducts()
@@ -56,52 +63,62 @@ namespace APICatalogo.Controllers
 		//	return Ok(categoriasProdutos);
 		//}
 
+		#endregion
 
 		[HttpGet]
 		[ServiceFilter(typeof(ApiLogginFilter))]
-		public ActionResult<IEnumerable<Categoria>> GetCategorias()
+		public ActionResult<IEnumerable<CategoriaDTO>> GetCategorias()
 		{
-			return Ok(_uof.categoriaRepositorio.GetAll());
+			var categorysDb = _uof.categoriaRepositorio.GetAll();
+			if (categorysDb is null) return NotFound();
+			var categoriasDTO = categorysDb.ToCategoriaDTOList();
+			return Ok(categoriasDTO);
 		}
 
 		[HttpGet("{id:int}", Name = "ObterCategoria")]
-		public ActionResult<Categoria> GetCategoria(int id)
+		public ActionResult<CategoriaDTO> GetCategoria(int id)
 		{
-			Categoria category = _uof.categoriaRepositorio.Get(c => c.CategoriaId == id);
+			var category = _uof.categoriaRepositorio.Get(c => c.CategoriaId == id);
 			if (category == null) throw new Exception("Requisição sem sucesso");
-			return Ok(category);
+
+			var categoriaDTO = category.ToCategoriaDTO();
+			return Ok(categoriaDTO);
 
 		}
-		[HttpGet("UsandoMiddleware")]
-		public ActionResult<Categoria> GetByIdMiddleware()
-		{
-			throw new Exception("exceção ao retornar a categoria");
-		}
+		
 
 		[HttpPost("Create")]
-		public ActionResult CreateCategoria(Categoria category)
+		public ActionResult<CategoriaDTO> CreateCategoria(CategoriaDTO categoryDTO)
 		{
-			var _categoria = _uof.categoriaRepositorio.Create(category);
+			if (categoryDTO is null) throw new Exception("Requisição sem sucesso.");
+
+			var categoria = categoryDTO.ToCategoria();
+			var categoryDb = _uof.categoriaRepositorio.Create(categoria);
 			_uof.Commit();
-			return new CreatedAtRouteResult("ObterProduto", new { id = _categoria.CategoriaId }, _categoria);
+			return new CreatedAtRouteResult("ObterProduto", new { id = categoryDb.CategoriaId }, categoryDb);
 		}
 
 		[HttpPut("{id:int}")]
-		public ActionResult UpdateCategoria(int id, Categoria categoria)
+		public ActionResult<CategoriaDTO> UpdateCategoria(int id, CategoriaDTO categoryDTO)
 		{
-			var _categoria = _uof.categoriaRepositorio.Update(categoria);
+			if (categoryDTO.CategoriaId != id) throw new Exception("Requisição sem sucesso.");
+			var categoria = categoryDTO.ToCategoria();
+			_uof.categoriaRepositorio.Update(categoria);
 			_uof.Commit();
-			return Ok(_categoria);
+			return Ok(categoryDTO);
 		}
 
 		[HttpDelete("{id}")]
-		public ActionResult<Categoria> DeleteCategoria(int id)
+		public ActionResult<CategoriaDTO> DeleteCategoria(int id)
 		{
-			var categoria = _uof.categoriaRepositorio.Get(c => c.CategoriaId == id);
-			if (categoria == null) throw new Exception("Requisição sem sucesso");
-			_uof.categoriaRepositorio.Delete(categoria);
+			var categoryDb = _uof.categoriaRepositorio.Get(c => c.CategoriaId == id);
+
+			if (categoryDb == null) throw new Exception("Requisição sem sucesso");
+			_uof.categoriaRepositorio.Delete(categoryDb);
 			_uof.Commit();
-			return Ok(categoria);
+			var categoriaDTO = CategoriaDTOMappingExtensions.ToCategoriaDTO(categoryDb);
+			
+			return Ok(categoriaDTO);
 		}
 
 

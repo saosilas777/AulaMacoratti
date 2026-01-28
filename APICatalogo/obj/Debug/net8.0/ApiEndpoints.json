@@ -9,7 +9,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[APICatalogo.Models.Categoria, APICatalogo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[APICatalogo.DTOs.CategoriaDTO, APICatalogo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -35,7 +35,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "APICatalogo.Models.Categoria",
+        "Type": "APICatalogo.DTOs.CategoriaDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -60,12 +60,22 @@
         "IsRequired": true
       },
       {
-        "Name": "categoria",
-        "Type": "APICatalogo.Models.Categoria",
+        "Name": "categoryDTO",
+        "Type": "APICatalogo.DTOs.CategoriaDTO",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "APICatalogo.DTOs.CategoriaDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "APICatalogo.Controllers.CategoriaController",
@@ -83,7 +93,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "APICatalogo.Models.Categoria",
+        "Type": "APICatalogo.DTOs.CategoriaDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -102,12 +112,22 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "category",
-        "Type": "APICatalogo.Models.Categoria",
+        "Name": "categoryDTO",
+        "Type": "APICatalogo.DTOs.CategoriaDTO",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "APICatalogo.DTOs.CategoriaDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "APICatalogo.Controllers.CategoriaController",
@@ -217,7 +237,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[APICatalogo.Models.Produto, APICatalogo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[APICatalogo.DTOs.ProdutoDTO, APICatalogo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -244,7 +264,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "APICatalogo.Models.Produto",
+        "Type": "APICatalogo.DTOs.ProdutoDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -269,12 +289,22 @@
         "IsRequired": true
       },
       {
-        "Name": "produto",
-        "Type": "APICatalogo.Models.Produto",
+        "Name": "produtoDTO",
+        "Type": "APICatalogo.DTOs.ProdutoDTO",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "APICatalogo.DTOs.ProdutoDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "APICatalogo.Controllers.ProdutosController",
@@ -292,7 +322,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "APICatalogo.Models.Produto",
+        "Type": "APICatalogo.DTOs.ProdutoDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -311,12 +341,22 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "produto",
-        "Type": "APICatalogo.Models.Produto",
+        "Name": "produtoDTO",
+        "Type": "APICatalogo.DTOs.ProdutoDTO",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "APICatalogo.DTOs.ProdutoDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "APICatalogo.Controllers.ProdutosController",
@@ -328,7 +368,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[APICatalogo.Models.Produto, APICatalogo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[APICatalogo.DTOs.ProdutoDTO, APICatalogo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

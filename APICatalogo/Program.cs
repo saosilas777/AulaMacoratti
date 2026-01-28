@@ -1,9 +1,11 @@
 using APICatalogo.Data;
+using APICatalogo.DTOs.Mappings;
 using APICatalogo.Extensions;
 using APICatalogo.Filters;
 using APICatalogo.Logging;
 using APICatalogo.Repositories;
 using APICatalogo.Services;
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 
@@ -22,9 +24,10 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(APIC
 builder.Services.AddTransient<IService, Service>();
 builder.Services.AddScoped<ICategoriaRepositorio,CategoriaRepositorio>();
 builder.Services.AddScoped<IProdutoRepositorio,ProdutoRepositorio>();
-builder.Services.AddScoped<IUnitOfWork,UnitOfWork>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped(typeof(IRepository<>),typeof(Repository<>));
 builder.Services.AddScoped<ApiLogginFilter>();
+builder.Services.AddAutoMapper(typeof(ProdutoDTOMappingProfile));
 builder.Logging.AddProvider(new CustomLoggerProvider(new CustomLoggerProviderConfiguration
 {
     LogLevel = LogLevel.Information

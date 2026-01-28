@@ -1,6 +1,8 @@
 ﻿using APICatalogo.Data;
+using APICatalogo.DTOs;
 using APICatalogo.Models;
 using APICatalogo.Repositories;
+using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -12,62 +14,70 @@ namespace APICatalogo.Controllers
 	public class ProdutosController : Controller
 	{
 		private readonly IUnitOfWork _uof;
-		public ProdutosController(IUnitOfWork uof)
+		private readonly IMapper _mapper;
+		public ProdutosController(IUnitOfWork uof,IMapper mapper)
 		{
 			_uof = uof;
+			_mapper = mapper;
 		}
 
 		[HttpGet("GetAll")]
-		public ActionResult<IEnumerable<Produto>> GetProdutos()
+		public ActionResult<IEnumerable<ProdutoDTO>> GetProdutos()
 		{
-			var products = _uof.produtoRepositorio.GetAll();
-			if (products is null) throw new Exception("Requisição sem sucesso");
-			return Ok(products);
+			var produtosDb = _uof.produtoRepositorio.GetAll();
+			if (produtosDb is null) throw new Exception("Requisição sem sucesso");
+			var produtosDTO = _mapper.Map<IEnumerable<ProdutoDTO>>(produtosDb);
+			return Ok(produtosDTO);
 
 		}
 		[HttpGet("{id:min(1)}", Name = "ObterProduto")]
-		public ActionResult<Produto> GetProduto(int id)
+		public ActionResult<ProdutoDTO> GetProduto(int id)
 		{
-
-			Produto? product = _uof.produtoRepositorio.Get(p => p.ProdutoId == id);
-			if (product is null) throw new Exception("Requisição sem sucesso");
-			return product;
+			var produtoDb = _uof.produtoRepositorio.Get(p => p.ProdutoId == id);
+			if (produtoDb is null) throw new Exception("Requisição sem sucesso");
+			var produto = _mapper.Map<ProdutoDTO>(produtoDb);	
+			return Ok(produto);
 
 		}
 		[HttpGet("{categoryId}", Name = "ObterProdutoPorCategoria")]
-		public ActionResult<IEnumerable<Produto>> GetProdutosPorCategoria(int categoryId)
+		public ActionResult<IEnumerable<ProdutoDTO>> GetProdutosPorCategoria(int categoryId)
 		{
-			return _uof.produtoRepositorio.GetProdutosPorCategoria(categoryId).ToList();
+			var produtosPorCategoria = _uof.produtoRepositorio.GetProdutosPorCategoria(categoryId).ToList();
+
+			var produtosDTO = _mapper.Map<IEnumerable<ProdutoDTO>>(produtosPorCategoria);
+			
+			return Ok(produtosDTO);
 		}
 
 		[HttpPost("Create")]
-		public ActionResult Create(Produto produto)
+		public ActionResult<ProdutoDTO> Create(ProdutoDTO produtoDTO)
 		{
-			if (produto == null)
+			if (produtoDTO is null)
 				return BadRequest();
-
+			var produto = _mapper.Map<Produto>(produtoDTO);
 			_uof.produtoRepositorio.Create(produto);
 			_uof.Commit();
-			return new CreatedAtRouteResult("ObterProduto", new { id = produto.ProdutoId }, produto);
+			return new CreatedAtRouteResult("ObterProduto", new { id = produtoDTO.ProdutoId }, produtoDTO);
 		}
 
 		[HttpPut("{id:int}")]
-		public ActionResult Update(int id, Produto produto)
+		public ActionResult<ProdutoDTO> Update(int id, ProdutoDTO produtoDTO)
 		{
-			if (id != produto.ProdutoId) throw new Exception("Requisição sem sucesso");
-
+			if (id != produtoDTO.ProdutoId) throw new Exception("Requisição sem sucesso");
+			var produto = _mapper.Map<Produto>(produtoDTO);
 			_uof.produtoRepositorio.Update(produto);
 			_uof.Commit();
 			return Ok(produto);
 		}
 		[HttpDelete("{id}")]
-		public ActionResult<Produto> Delete(int id)
+		public ActionResult<ProdutoDTO> Delete(int id)
 		{
 			var produto = _uof.produtoRepositorio.Get(p => p.ProdutoId == id);
 			if (produto is null) throw new Exception("Requisição sem sucesso");
 			_uof.produtoRepositorio.Delete(produto);
 			_uof.Commit();
-			return produto;
+
+			return _mapper.Map<ProdutoDTO>(produto);
 		}
 
 		

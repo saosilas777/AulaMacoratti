@@ -156,3 +156,5 @@ C:\Users\saosi\Documents\Curso Web API Macoratti\Projetos\AulaMacoratti\APICatal
 C:\Users\saosi\Documents\Curso Web API Macoratti\Projetos\AulaMacoratti\APICatalogo\obj\Debug\net8.0\APICatalogo.pdb
 C:\Users\saosi\Documents\Curso Web API Macoratti\Projetos\AulaMacoratti\APICatalogo\obj\Debug\net8.0\APICatalogo.genruntimeconfig.cache
 C:\Users\saosi\Documents\Curso Web API Macoratti\Projetos\AulaMacoratti\APICatalogo\obj\Debug\net8.0\ref\APICatalogo.dll
+D:\Curso Web API 2024\Projetos\APICatalogo\APICatalogo\bin\Debug\net8.0\AutoMapper.dll
+D:\Curso Web API 2024\Projetos\APICatalogo\APICatalogo\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
